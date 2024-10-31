@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://iwcs51ekue0h"]
+
+[ext_resource type="Shader" path="res://Art/Shaders/shield.gdshader" id="1_jpaef"]
+[ext_resource type="Texture2D" uid="uid://dxvgvxaom6iw3" path="res://Art/2D/ShieldTexture/ShieldTexture.png" id="2_bpsak"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4oi5b"]
+noise_type = 3
+frequency = 0.0123
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hxx5y"]
+seamless = true
+seamless_blend_skirt = 0.54
+noise = SubResource("FastNoiseLite_4oi5b")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jpaef")
+shader_parameter/fresnel_color = Color(0.0647327, 0.490633, 0.441165, 1)
+shader_parameter/border_color = Color(0.489201, 0, 0.110206, 1)
+shader_parameter/_fresnel_power = 3.286
+shader_parameter/_rotation = 0.082
+shader_parameter/_panning = 0.0
+shader_parameter/_displacement = 0.002
+shader_parameter/shield_texture = ExtResource("2_bpsak")
+shader_parameter/_noise = SubResource("NoiseTexture2D_hxx5y")

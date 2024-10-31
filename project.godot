@@ -17,3 +17,11 @@ config/icon="res://icon.svg"
 [dotnet]
 
 project/assembly_name="ShadersGold1"
+
+[file_customization]
+
+folder_colors={
+"res://Art/": "red",
+"res://Scenes/": "green",
+"res://Scripts/": "blue"
+}
