@@ -1,8 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://wdwset5u0vki"]
+[gd_scene load_steps=19 format=4 uid="uid://wdwset5u0vki"]
 
+[ext_resource type="Shader" uid="uid://wwwa3o7c67y5" path="res://Art/Shaders/dissolve.tres" id="1_ixi1v"]
 [ext_resource type="Material" uid="uid://iwcs51ekue0h" path="res://Art/Shaders/ShieldMaterial.tres" id="3_0w47o"]
 [ext_resource type="Shader" path="res://Art/Shaders/outline.gdshader" id="4_imral"]
+[ext_resource type="Shader" path="res://Art/Shaders/Hologram.gdshader" id="5_5dgdc"]
 [ext_resource type="Shader" path="res://Art/Shaders/ShieldMaterial.gdshader" id="5_q2wex"]
+[ext_resource type="ArrayMesh" uid="uid://b2avoynf3agh6" path="res://Art/3D/Assassin.obj" id="5_t8rdr"]
 
 [sub_resource type="Environment" id="Environment_k68ns"]
 background_mode = 1
@@ -12,6 +15,14 @@ glow_normalized = true
 glow_blend_mode = 1
 glow_hdr_threshold = 1.14
 glow_hdr_scale = 1.59
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddgsf"]
+render_priority = 0
+shader = ExtResource("1_ixi1v")
+shader_parameter/EmissionStrength = 2.0
+shader_parameter/EmissionColor = Color(0.819646, 0.298549, 0.129947, 1)
+shader_parameter/Speed = 0.0
+shader_parameter/DissolveIntensity = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mr6i"]
 
@@ -93,6 +104,13 @@ render_priority = 0
 next_pass = SubResource("ShaderMaterial_htb13")
 shader = ExtResource("5_q2wex")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ricp2"]
+render_priority = 0
+shader = ExtResource("5_5dgdc")
+shader_parameter/emission_color = Color(0.988235, 0.572549, 0.341176, 1)
+shader_parameter/emission_amount = 8.64
+shader_parameter/rim_sharpness = 3.647
+
 [node name="ShowcaseScene" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -104,18 +122,26 @@ size = Vector3(18.135, 0.0297852, 18.4414)
 
 [node name="ShowcaseItemsParent" type="Node3D" parent="."]
 
-[node name="Barrier2" type="MeshInstance3D" parent="ShowcaseItemsParent"]
+[node name="Dissolve" type="MeshInstance3D" parent="ShowcaseItemsParent"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -3.78721, 1.35282, 0)
+material_override = SubResource("ShaderMaterial_ddgsf")
 mesh = SubResource("ArrayMesh_okdrn")
 skeleton = NodePath("")
 
 [node name="Shield" type="MeshInstance3D" parent="ShowcaseItemsParent"]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 2.63577, 1.34394, 0.0023005)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 2.63585, 1.35974, 0.00308943)
 material_override = ExtResource("3_0w47o")
 mesh = SubResource("ArrayMesh_hkh24")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Outline" type="MeshInstance3D" parent="ShowcaseItemsParent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.353, 0)
 mesh = SubResource("BoxMesh_eitdo")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_a8bqp")
+
+[node name="Cloaked" type="MeshInstance3D" parent="ShowcaseItemsParent"]
+transform = Transform3D(-0.02, 0, -1.74846e-09, 0, 0.02, 0, 1.74846e-09, 0, -0.02, 6.28263, 1.57686, 0.660113)
+material_override = SubResource("ShaderMaterial_ricp2")
+mesh = ExtResource("5_t8rdr")
+skeleton = NodePath("../..")

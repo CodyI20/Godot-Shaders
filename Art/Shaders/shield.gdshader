@@ -1,6 +1,6 @@
 shader_type spatial;
 render_mode shadows_disabled;
-#include "res://Art/2D/ShieldTexture/funcs.gdshaderinc"
+#include "funcs.gdshaderinc"
 
 uniform vec3 fresnel_color : source_color;
 uniform vec3 border_color : source_color;
