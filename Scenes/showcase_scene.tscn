@@ -21,8 +21,8 @@ render_priority = 0
 shader = ExtResource("1_ixi1v")
 shader_parameter/EmissionStrength = 2.0
 shader_parameter/EmissionColor = Color(0.819646, 0.298549, 0.129947, 1)
-shader_parameter/Speed = 0.0
-shader_parameter/DissolveIntensity = 0.25
+shader_parameter/Speed = 2.0
+shader_parameter/DissolveIntensity = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mr6i"]
 

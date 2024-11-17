@@ -29,10 +29,10 @@ operator = 2
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_x1xx7"]
 parameter_name = "DissolveIntensity"
 hint = 1
-min = 0.05
-max = 0.25
+min = 0.3
+max = 0.5
 default_value_enabled = true
-default_value = 0.05
+default_value = 0.3
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_5kw2e"]
 parameter_name = "Albedo"
@@ -75,7 +75,7 @@ uniform sampler2D tex_frg_4;
 uniform float EmissionStrength = 2;
 uniform vec4 EmissionColor : source_color = vec4(0.819646, 0.298549, 0.129947, 1.000000);
 uniform float Speed = 2;
-uniform float DissolveIntensity : hint_range(0.05000000074506, 0.25) = 0.05000000074506;
+uniform float DissolveIntensity : hint_range(0.30000001192093, 0.5) = 0.30000001192093;
 
 
 
@@ -161,7 +161,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-2710.87, 1423.49)
+graph_offset = Vector2(-1285.48, 593.567)
 nodes/fragment/0/position = Vector2(780, 140)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_5kw2e")
 nodes/fragment/2/position = Vector2(-960, 80)
@@ -170,7 +170,7 @@ nodes/fragment/3/position = Vector2(-500, 120)
 nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_r0hmq")
 nodes/fragment/4/position = Vector2(-960, 500)
 nodes/fragment/5/node = SubResource("VisualShaderNodeInput_5a6w7")
-nodes/fragment/5/position = Vector2(-2080, 1380)
+nodes/fragment/5/position = Vector2(-2060, 1400)
 nodes/fragment/6/node = SubResource("VisualShaderNodeFloatFunc_mjp83")
 nodes/fragment/6/position = Vector2(-1540, 1420)
 nodes/fragment/7/node = SubResource("VisualShaderNodeRemap_72wb8")
