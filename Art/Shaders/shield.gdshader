@@ -32,4 +32,3 @@ void fragment() {
 	EMISSION = rcolor * 12.;
 	ALPHA = saturate(bmask * noise + f);
 }
-
