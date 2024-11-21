@@ -16,11 +16,11 @@ noise = SubResource("FastNoiseLite_4oi5b")
 [resource]
 render_priority = 0
 shader = ExtResource("1_jpaef")
-shader_parameter/fresnel_color = Color(0.0647327, 0.490633, 0.441165, 1)
-shader_parameter/border_color = Color(0.489201, 0, 0.110206, 1)
-shader_parameter/_fresnel_power = 3.286
-shader_parameter/_rotation = 0.082
-shader_parameter/_panning = 0.0
+shader_parameter/fresnel_color = Color(0.779755, 0.802346, 0.750824, 1)
+shader_parameter/border_color = Color(0.425141, 0, 0.0907587, 1)
+shader_parameter/_fresnel_power = 5.69
+shader_parameter/_rotation = 0.123
+shader_parameter/_panning = 0.037
 shader_parameter/_displacement = 0.002
 shader_parameter/shield_texture = ExtResource("2_bpsak")
 shader_parameter/_noise = SubResource("NoiseTexture2D_hxx5y")

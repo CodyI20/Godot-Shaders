@@ -41,6 +41,7 @@ parameter_name = "Albedo"
 source = 5
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_y1oyi"]
+frequency = 0.0088
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_caqbs"]
 noise = SubResource("FastNoiseLite_y1oyi")
@@ -185,13 +186,13 @@ nodes/fragment/11/position = Vector2(-280, 700)
 nodes/fragment/12/node = SubResource("VisualShaderNodeColorParameter_v3fpv")
 nodes/fragment/12/position = Vector2(-1420, 720)
 nodes/fragment/13/node = SubResource("VisualShaderNodeMix_twc8r")
-nodes/fragment/13/position = Vector2(-540, 960)
+nodes/fragment/13/position = Vector2(-580, 900)
 nodes/fragment/14/node = SubResource("VisualShaderNodeFloatParameter_87paj")
-nodes/fragment/14/position = Vector2(-300, 880)
+nodes/fragment/14/position = Vector2(-80, 1040)
 nodes/fragment/15/node = SubResource("VisualShaderNodeVectorCompose_ps2hw")
-nodes/fragment/15/position = Vector2(20, 840)
+nodes/fragment/15/position = Vector2(260, 1000)
 nodes/fragment/16/node = SubResource("VisualShaderNodeVectorOp_p4s51")
-nodes/fragment/16/position = Vector2(320, 640)
+nodes/fragment/16/position = Vector2(500, 620)
 nodes/fragment/17/node = SubResource("VisualShaderNodeFloatParameter_x1xx7")
 nodes/fragment/17/position = Vector2(-1660, 940)
-nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 0, 0, 4, 0, 0, 1, 6, 0, 7, 0, 7, 0, 0, 19, 9, 0, 6, 0, 5, 0, 9, 1, 8, 0, 9, 0, 7, 0, 10, 0, 4, 1, 11, 0, 12, 0, 13, 1, 10, 0, 13, 2, 13, 0, 11, 1, 14, 0, 15, 0, 14, 0, 15, 1, 14, 0, 15, 2, 15, 0, 16, 0, 11, 0, 16, 1, 16, 0, 0, 5, 17, 0, 10, 1)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 0, 0, 6, 0, 7, 0, 7, 0, 0, 19, 9, 0, 6, 0, 5, 0, 9, 1, 8, 0, 9, 0, 7, 0, 10, 0, 4, 1, 11, 0, 12, 0, 13, 1, 10, 0, 13, 2, 13, 0, 11, 1, 14, 0, 15, 0, 14, 0, 15, 1, 14, 0, 15, 2, 15, 0, 16, 0, 11, 0, 16, 1, 16, 0, 0, 5, 17, 0, 10, 1, 4, 0, 0, 1)
